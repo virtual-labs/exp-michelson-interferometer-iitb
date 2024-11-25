@@ -1,0 +1,229 @@
+
+#score {
+  background-color: aquamarine;
+  width: 85%;
+  padding: 2%;
+  text-align: center;
+  position: absolute;
+  bottom: 3vh;
+}
+
+.all_properties_flex{
+  display: flex;
+  flex-direction: row;
+}
+
+.table-responsive {
+  max-width: 100%;
+}
+
+#panel1_btn {
+  position: absolute;
+  bottom: 80px;
+  width: 91%;
+}
+
+#exp-title {
+  position: relative;
+  top: 10%;
+  background-color: rgb(144, 175, 233);
+  padding: 2%;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-close {
+  position: relative;
+  /* background-color: rgb(229, 84, 84); */
+  left: -48%;
+  /* width: 40%; */
+}
+
+
+
+#act3-left-content > div{
+  margin: 3%;
+}
+
+
+
+/* #canvas-n-rings {
+  display: none;
+  position: absolute;
+  border: 2px solid black;
+  left: 0;
+  left: 2.1vw;
+} */
+
+#a2-btn-left, #a2-btn-right, #a2-btn-fine-left, #a2-btn-fine-right, #a2-btn-up, #a2-btn-down, #a2-btn-fine-up, #a2-btn-fine-down {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  border: none;
+  font-size: 3vw;
+  background: transparent;
+}
+
+#re-center {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  left: 53vw;
+  top: 27vw;
+  font-size: 3.5vw;
+  border: none;
+  background: transparent;
+  
+}
+
+#a2-btn-up {
+  left: 54vw;
+  top: 20vw;
+ 
+}
+
+#a2-btn-fine-up {
+  left: 54vw;
+  top: 24vw;
+  
+  
+}
+
+#a2-btn-down {
+  left: 53vw;
+  top: 36vw;
+ 
+}
+
+#a2-btn-fine-down {
+  left: 53vw;
+  top: 32vw;
+  
+}
+
+#a2-btn-left {
+  left: 44vw;
+  top: 27.5vw;
+ 
+}
+
+#a2-btn-fine-left {
+  left: 48vw;
+  top: 27.5vw;
+  
+}
+
+#a2-btn-right {
+  left: 63vw;
+  top: 27.5vw;
+ 
+}
+
+#a2-btn-fine-right {
+  left: 59vw;
+  top: 27.5vw;
+ 
+}
+
+#act2-readings {
+  position: absolute;
+  width:20vw;
+  left: 70vw;
+  top : 21vw;
+  z-index: 5;
+  padding: 1%;
+  background-color: skyblue;
+  font-size: 1.6vw;
+  border-radius: 5px;
+}
+
+
+
+#a3-btn-left, #a3-btn-right, #a3-btn-fine-left, #a3-btn-fine-right, #a3-btn-up, #a3-btn-down, #a3-btn-fine-up, #a3-btn-fine-down {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  border: none;
+  font-size: 3vw;
+  background: transparent;
+}
+
+#a3-re-center {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  left: 53vw;
+  top: 27vw;
+  font-size: 3.5vw;
+  border: none;
+  background: transparent;
+  
+}
+
+#a3-btn-up {
+  left: 54vw;
+  top: 20vw;
+ 
+}
+
+#a3-btn-fine-up {
+  left: 54vw;
+  top: 24vw;
+  
+  
+}
+
+#a3-btn-down {
+  left: 53vw;
+  top: 36vw;
+ 
+}
+
+#a3-btn-fine-down {
+  left: 53vw;
+  top: 32vw;
+  
+}
+
+#a3-btn-left {
+  left: 44vw;
+  top: 27.5vw;
+ 
+}
+
+#a3-btn-fine-left {
+  left: 48vw;
+  top: 27.5vw;
+  
+}
+
+#a3-btn-right {
+  left: 63vw;
+  top: 27.5vw;
+ 
+}
+
+#a3-btn-fine-right {
+  left: 59vw;
+  top: 27.5vw;
+ 
+}
+
+#act3-readings {
+  position: absolute;
+  width:20vw;
+  left: 70vw;
+  top : 21vw;
+  z-index: 5;
+  padding: 1%;
+  background-color: skyblue;
+  font-size: 1.6vw;
+  border-radius: 5px;
+}
+
+
+
+
+
+

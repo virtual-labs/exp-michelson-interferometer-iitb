@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/loaded_images.js"></script>
+</head>
+<body>
+
+    <canvas width="500" height="500" id="mycanvas1">
+
+    </canvas>
+
+    <canvas style="position: absolute; left: 0;" width="500" height="500" id="mycanvas2">
+
+    </canvas>
+
+    <canvas style="position: absolute; left: 0;" width="500" height="500" id="mycanvas3">
+
+    </canvas>
+
+
+    <script>
+        canvas_1 = document.getElementById('mycanvas1');
+        canvas_2 = document.getElementById('mycanvas2');
+        canvas_3 = document.getElementById('mycanvas3');
+
+
+        context1 = canvas_1.getContext('2d');
+        context2 = canvas_1.getContext('2d');
+        context3 = canvas_1.getContext('2d');
+
+
+        context1.beginPath();
+        context1.moveTo(100, 100);
+        context1.lineTo(200, 200);
+        context1.stroke();
+
+
+        context2.beginPath();
+        context2.moveTo(200, 250);
+        context2.lineTo(300, 300);
+        context2.stroke();
+
+
+
+
+
+    </script>
+
+
+    
+
+</body>
+</html>
