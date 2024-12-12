@@ -8,7 +8,7 @@ var cc = (document.getElementById('pannelcreate'));
 var pp = new Pannel(cc);
 pp.addoffcanvas(3);
 var act1_btn = document.createElement('div');
-act1_btn.innerHTML = `<button id="panel1_btn" class="btn btn-primary" onclick="move_to_activity3()" style="position: absolute; bottom: 12vh; width: 85%;">Next</button>`;
+act1_btn.innerHTML = `<button id="panel1_btn" class="btn btn-primary" onclick="move_to_activity3()" style="position: absolute; bottom: 17vh; width: 91%;">Next</button>`;
 var act1_start_button = document.createElement('div');
 act1_start_button.innerHTML = `<button id="panel1_btn" class="btn btn-primary" onclick="start_act1();">Start</button>`;
 function start_act1() {
@@ -21,7 +21,7 @@ function start_act1() {
 function move_to_activity3() {
     document.getElementById('panel1_btn').remove();
     canvas.removeEventListener('click', a1_mouseclick);
-    activity3();
+    activity2();
 }
 //varibles related to activity 1
 var question = [];
@@ -86,9 +86,6 @@ function a1_windowresize() {
     a1_canvas_mapping();
     //draw scene
     scene.draw();
-    //  for(let j = 0; j<a1_index.length; j++) {
-    //      a1_labels[a1_index[j]].draw();
-    //  }
 }
 function a1_canvas_size() {
     canvas.width = window.innerWidth * 0.91;
@@ -103,21 +100,30 @@ function a1_canvas_mapping() {
     context.scale(1, -1);
 }
 function a1_draw_all_components() {
-    var sq = new Chemistry.Custome_image(circular_glass, new Chemistry.Point(1100, 800), 261 * 1.5, 46 * 1.5, canvas);
-    sq.name = 'Circular Glass';
+    var sq = new Chemistry.Custome_image(travelling_microscope, new Chemistry.Point(900, 450), 137, 371, canvas);
+    sq.name = 'Travelling microscope';
     scene.add(sq);
-    var sq = new Chemistry.Custome_image(convex_lens, new Chemistry.Point(1370, 230), 68 * 1.5, 213 * 1.5, canvas);
-    sq.name = 'Convex Lens';
+    var sq = new Chemistry.Custome_image(plano_convex_lens, new Chemistry.Point(1600, 300), 240, 47, canvas);
+    sq.name = 'Plano convex lens';
     scene.add(sq);
-    var sq = new Chemistry.Custome_image(light, new Chemistry.Point(1650, 600), 93 * 1.5, 181 * 1.5, canvas);
-    sq.name = 'Monochromatic Light Source';
+    var sq = new Chemistry.Custome_image(light, new Chemistry.Point(350, 250), 93, 181, canvas);
+    sq.name = 'Monochromatic light source';
     scene.add(sq);
-    var sq = new Chemistry.Custome_image(plano_convex, new Chemistry.Point(280, 830), 261 * 1.5, 63 * 1.5, canvas);
-    sq.name = 'Plano-Convex Lens';
+    var sq = new Chemistry.Custome_image(convex_lens, new Chemistry.Point(250, 750), 68, 213, canvas);
+    sq.name = 'Convex lens';
     scene.add(sq);
-    var sq = new Chemistry.Custome_image(microscope, new Chemistry.Point(500, 380), 537 * 1.5, 414 * 1.5, canvas);
-    sq.name = 'Microscope';
+    var sq = new Chemistry.Custome_image(circular_glass, new Chemistry.Point(1600, 700), 261, 46, canvas);
+    sq.name = 'Circular glass plate';
     scene.add(sq);
+    // var sq = new Chemistry.Custome_image(
+    // 	weighing_machine,
+    // 	new Chemistry.Point(900, 700),
+    // 	835 * 0.5,
+    // 	501 * 0.5,
+    // 	canvas
+    // );
+    // sq.name = 'Weighing Machine';
+    // scene.add(sq);
 }
 //list of all activity 1 questions
 function a1_load_questions() { }
@@ -125,42 +131,48 @@ function a1_load_questions() { }
     question = [];
     question.push({
         srno: 1,
-        question: "Select <span style='color: #018fc3'>Circular Glass Plate</span>",
-        ans: 'Circular Glass',
+        question: "Select <span style='color: #018fc3'>Travelling microscope</span>",
+        ans: 'Travelling microscope',
         hint: [
-            'Has Suction and Discharge',
-            'Has valve attached',
-            'Triangular Base',
+            'Rectangular in shape',
+            'Looks like pipe',
+            'Rectangular in shape',
         ],
     });
     question.push({
         srno: 2,
-        question: "Select <span style='color: #018fc3'> Convex Lens </span>",
-        ans: 'Convex Lens',
-        hint: ['Rectangular', 'Mounted Vertically', 'Has valves attached'],
-    });
-    question.push({
-        srno: 3,
-        question: "Select <span style='color: #018fc3'> Monochromatic Light Source </span>",
-        ans: 'Monochromatic Light Source',
-        hint: ['Rectangular', 'Mounted Vertically', 'Has valves attached'],
-    });
-    question.push({
-        srno: 4,
-        question: "Select <span style='color: #018fc3'>Plano-Convex Lens</span>",
-        ans: 'Plano-Convex Lens',
+        question: "Select <span style='color: #018fc3'> Plano convex lens </span>",
+        ans: 'Plano convex lens',
         hint: [
-            'Double Pipe',
-            'pipe inside a pipe',
-            'Has two inlets and outlets',
+            'Semi-circular in shape',
+            'Transparent',
+            'Semi-circular in shape',
         ],
     });
     question.push({
-        srno: 5,
-        question: "Select <span style='color: #018fc3'>Travelling Microscope</span>",
-        ans: 'Microscope',
-        hint: ['U-Shape', 'Mounted horizontally', 'Has two pins'],
+        srno: 3,
+        question: "Select <span style='color: #018fc3'> Monochromatic light source </span>",
+        ans: 'Monochromatic light source',
+        hint: ['light source', 'light source', 'light source'],
     });
+    question.push({
+        srno: 4,
+        question: "Select <span style='color: #018fc3'>Convex lens</span>",
+        ans: 'Convex lens',
+        hint: ['Circular', 'Transparent', 'Circular'],
+    });
+    question.push({
+        srno: 5,
+        question: "Select <span style='color: #018fc3'>Circular glass plate</span>",
+        ans: 'Circular glass plate',
+        hint: ['Circular in shape', 'Transparent', 'Circular in shape'],
+    });
+    // question.push({
+    // 	srno: 6,
+    // 	question: "Select <span style='color: #018fc3'>Weighing Machine</span>",
+    // 	ans: 'Weighing Machine',
+    // 	hint: ['U-Shape', 'Mounted horizontally', 'Has two pins'],
+    // });
 }
 function a1_display_current_question() {
     //document.getElementById("score-div-box").innerText = total_score.toString();
@@ -187,24 +199,25 @@ function a1_display_current_question() {
 }
 function load_higlighted_images() {
     highlighted_images = [
-        [circular_glass, circular_glass],
-        [convex_lens, convex_lens],
+        [travelling_microscope, travelling_microscope],
+        [plano_convex_lens, plano_convex_lens],
         [light, light],
-        [plano_convex, plano_convex],
-        [microscope, microscope],
+        [convex_lens, convex_lens],
+        [circular_glass, circular_glass],
     ];
     a1_labels = [
-        new Chemistry.Geo_Text('Circular Glass Plate', new Chemistry.Point(1100, 800), canvas),
-        new Chemistry.Geo_Text('Convex Lens', new Chemistry.Point(1370, 300), canvas),
-        new Chemistry.Geo_Text('Monochromatic Light Source', new Chemistry.Point(1500, 600), canvas),
-        new Chemistry.Geo_Text('Plano-Convex Lens', new Chemistry.Point(280, 830), canvas),
-        new Chemistry.Geo_Text('Microscope', new Chemistry.Point(450, 90), canvas),
+        new Chemistry.Geo_Text('Travelling microscope', new Chemistry.Point(800, 230), canvas),
+        new Chemistry.Geo_Text('Plano convex lens', new Chemistry.Point(1500, 230), canvas),
+        new Chemistry.Geo_Text('Monochromatic light source', new Chemistry.Point(200, 350), canvas),
+        new Chemistry.Geo_Text('Convex lens', new Chemistry.Point(100, 600), canvas),
+        new Chemistry.Geo_Text('Circular glass plate', new Chemistry.Point(1450, 620), canvas),
     ];
     a1_labels[0].font = '30%';
     a1_labels[1].font = '30%';
     a1_labels[2].font = '30%';
     a1_labels[3].font = '30%';
     a1_labels[4].font = '30%';
+    // a1_labels[5].font = '30%';
 }
 function a1_random_questions() {
     arrayofrandquestion = [];
@@ -367,5 +380,5 @@ function a1_mouseclick(e) {
     let y = Math.round((canvas.height - (e.clientY - rect.y)) / lscale);
     a1_check_isinside(x, y);
 }
-//activity1();
+activity1();
 //# sourceMappingURL=activity1.js.map

@@ -68,8 +68,7 @@ function activity2() {
 	pp.addoffcanvas(3);
 	pp.addoffcanvas(4);
 
-
-    user_readings =  [
+	user_readings = [
 		['1', ' ', ' ', ' ', ' ', ' '],
 		['2', ' ', ' ', ' ', ' ', ' '],
 		['3', ' ', ' ', ' ', ' ', ' '],
@@ -77,16 +76,19 @@ function activity2() {
 		['5', ' ', ' ', ' ', ' ', ' '],
 		['6', ' ', ' ', ' ', ' ', ' '],
 		['7', ' ', ' ', ' ', ' ', ' '],
-		['8', ' ', ' ', ' ', ' ', ' ']
-  ];
-  ;
-
-
-    pp.showtitle(`<p id="exp-title" style='width: 25vw;'>Note Readings in table</span><p>`, 3);
-    pp.showdescription(`<div style="background-color: #f4ccccff; border-radius: 10px; border: black; padding: 5%; font-weight: 500; font-size: calc(0.5vw + 12px);">
+		['8', ' ', ' ', ' ', ' ', ' '],
+	];
+	pp.showtitle(
+		`<p id="exp-title" style='width: 25vw;'>Note Readings in table</span><p>`,
+		3
+	);
+	pp.showdescription(
+		`<div style="background-color: #f4ccccff; border-radius: 10px; border: black; padding: 5%; font-weight: 500; font-size: calc(0.5vw + 12px);">
     <p>Use the up and down arrows shown on the simulator to turn the screw guage.</p>
     <p>To take reading a certain point click "add readings" button to add directly to the table</p>
-     </div>`, 3);
+     </div>`,
+		3
+	);
 
 	pp.showtitle(`Observation Table`, 4);
 
@@ -125,11 +127,11 @@ function activity2() {
 
 	setTimeout(draw_all_canvas, 500);
 
+	setTimeout(() => {
+		MathJax.typeset();
+	}, 200);
 
-    setTimeout(() => {MathJax.typeset();}, 200);
-
-    a2_windowresize();
-
+	a2_windowresize();
 }
 
 function draw_all_canvas() {
@@ -154,18 +156,14 @@ function draw_all_canvas() {
 	// let up_btn: HTMLButtonElement = <HTMLButtonElement>(
 	// 	document.getElementById('a2-btn-up')
 	// );
-	fine_up_btn = <HTMLButtonElement>(
-		document.getElementById('a2-btn-fine-up')
-	);
+	fine_up_btn = <HTMLButtonElement>document.getElementById('a2-btn-fine-up');
 	// let down_btn: HTMLButtonElement = <HTMLButtonElement>(
 	// 	document.getElementById('a2-btn-down')
 	// );
 	fine_down_btn = <HTMLButtonElement>(
 		document.getElementById('a2-btn-fine-down')
 	);
-	reset = <HTMLButtonElement>(
-		document.getElementById('re-center')
-	);
+	reset = <HTMLButtonElement>document.getElementById('re-center');
 
 	// right_btn.addEventListener('click', move_right);
 	// left_btn.addEventListener('click', move_left);
@@ -286,7 +284,7 @@ function load_canvas2_images() {
 		),
 		my_canvas2
 	);
-	inter_rings.color = "red";
+	inter_rings.color = 'red';
 	let mscope_img = new Chemistry.Custome_image(
 		mscope,
 		new Chemistry.Point(
@@ -316,18 +314,14 @@ function load_canvas2_images() {
 	scene1.add(inter_rings);
 	scene1.add(mscope_img);
 
-    scene1.add(x_line);
-    scene1.add(y_line);
+	scene1.add(x_line);
+	scene1.add(y_line);
 
-    all_left_readings = inter_rings.all_left_readings;
-    console.log(all_left_readings);
+	all_left_readings = inter_rings.all_left_readings;
+	console.log(all_left_readings);
 
-    all_right_readings = inter_rings.all_right_readings;
-    console.log(all_right_readings);
-
-    
-
-   
+	all_right_readings = inter_rings.all_right_readings;
+	console.log(all_right_readings);
 }
 
 function move_right() {
@@ -357,7 +351,6 @@ function move_fine_left() {
 function move_up() {
 	inter_rings.shift_up();
 	scene1.draw();
-	
 }
 
 function move_fine_up() {
@@ -365,14 +358,16 @@ function move_fine_up() {
 
 	scene1.draw();
 
-	if(inter_rings.n <= 30) {
-		current_micrometer_reading = parseFloat(inferometer_readings[inter_rings.n-1][0]);
+	if (inter_rings.n <= 30) {
+		current_micrometer_reading = parseFloat(
+			inferometer_readings[inter_rings.n - 1][0]
+		);
 		current_num_of_rings = inter_rings.n;
-		current_lambda = parseFloat(inferometer_readings[inter_rings.n+1][2]);
+		current_lambda = parseFloat(inferometer_readings[inter_rings.n + 1][2]);
 	} else {
 		alert('maximum number of rings');
 	}
-	
+
 	show_micro_scale_reading();
 	enable_addvalue_btn();
 }
@@ -386,14 +381,16 @@ function move_fine_down() {
 	inter_rings.shift_fine_down();
 	scene1.draw();
 
-	if(inter_rings.n > 0) {
-		current_micrometer_reading = parseFloat(inferometer_readings[inter_rings.n-1][0]);
+	if (inter_rings.n > 0) {
+		current_micrometer_reading = parseFloat(
+			inferometer_readings[inter_rings.n - 1][0]
+		);
 		current_num_of_rings = inter_rings.n;
-		current_lambda = parseFloat(inferometer_readings[inter_rings.n+1][2]);
+		current_lambda = parseFloat(inferometer_readings[inter_rings.n + 1][2]);
 	} else {
 		alert('minimum number of rings');
 	}
-	
+
 	show_micro_scale_reading();
 	enable_addvalue_btn();
 }
@@ -404,8 +401,7 @@ function re_center() {
 	scene1.draw();
 }
 
-function show_micro_scale_reading()
-{
+function show_micro_scale_reading() {
 	// msr = (inter_rings.stpt.x - inter_rings.center_x) / (inter_rings.multiplier / 2);
 	// 	msr = msr / 2;
 	// 	let msr_val = Math.floor(parseFloat((msr / 2).toFixed(3)) / 0.05) ;
@@ -418,14 +414,15 @@ function show_micro_scale_reading()
 }
 
 function show_main_scale_reading() {
-
-	if(inter_rings.center_x <= inter_rings.stpt.x) {
-		msr = (inter_rings.stpt.x - inter_rings.center_x) / (inter_rings.multiplier / 2);
+	if (inter_rings.center_x <= inter_rings.stpt.x) {
+		msr =
+			(inter_rings.stpt.x - inter_rings.center_x) /
+			(inter_rings.multiplier / 2);
 		msr = msr / 2;
-		let msr_val = Math.floor(parseFloat((msr / 2).toFixed(3)) / 0.05) ;
+		let msr_val = Math.floor(parseFloat((msr / 2).toFixed(3)) / 0.05);
 
 		let vsr_val = Math.floor(
-			(parseFloat((msr / 2).toFixed(3)) - (msr_val * 0.05)) * 1000
+			(parseFloat((msr / 2).toFixed(3)) - msr_val * 0.05) * 1000
 		);
 
 		let lamda_val = current_lambda;
@@ -434,38 +431,53 @@ function show_main_scale_reading() {
 
 		vsr_show.value = vsr_val.toString();
 		lamda_show.value = lamda_val.toString();
-
 	} else if (inter_rings.center_x > inter_rings.stpt.x) {
-		msr = (inter_rings.center_x - inter_rings.stpt.x) / (inter_rings.multiplier / 2);
+		msr =
+			(inter_rings.center_x - inter_rings.stpt.x) /
+			(inter_rings.multiplier / 2);
 		msr = msr / 2;
-		let msr_val = Math.floor(parseFloat((msr / 2).toFixed(3)) / 0.05) ;
+		let msr_val = Math.floor(parseFloat((msr / 2).toFixed(3)) / 0.05);
 
 		let vsr_val = Math.floor(
-			(parseFloat((msr / 2).toFixed(3)) - (msr_val * 0.05)) * 1000
+			(parseFloat((msr / 2).toFixed(3)) - msr_val * 0.05) * 1000
 		);
 
 		msr_show.value = msr_val.toString();
 
 		vsr_show.value = vsr_val.toString();
-
-
 	}
 }
 
-function load_table_input()
-{
+function load_table_input() {
 	let heading = [
 		'Sno.',
 		'Micrometer Reading',
 		'Number of Fringes',
 		'Calculate Wavelength (nm)',
 	];
-	let parent:HTMLDivElement = <HTMLDivElement>document.getElementById("pannel4");
-	let offcanvasbody:HTMLDivElement = <HTMLDivElement>document.getElementById("offcanvasRight4");
+	let parent: HTMLDivElement = <HTMLDivElement>(
+		document.getElementById('pannel4')
+	);
+	let offcanvasbody: HTMLDivElement = <HTMLDivElement>(
+		document.getElementById('offcanvasRight4')
+	);
 	offcanvasbody.style.width = '50vw';
 
-	tab_data=[[null,null,null]];
-	let tab = new Verify_Rows_Cols_Custom_Fixed(heading,tab_data,[],[],'',parent,true,true,()=>{alert("Success")},5);
+	tab_data = [[null, null, null]];
+	let tab = new Verify_Rows_Cols_Custom_Fixed(
+		heading,
+		tab_data,
+		[],
+		[],
+		'',
+		parent,
+		true,
+		true,
+		() => {
+			alert('Success');
+		},
+		5
+	);
 
 	tab.load_table();
 	tab_data = [];
@@ -498,24 +510,23 @@ function load_reading_table() {
 }
 
 function add_readings() {
-
-	let btn:HTMLButtonElement = <HTMLButtonElement>document.getElementById("add-reading");
+	let btn: HTMLButtonElement = <HTMLButtonElement>(
+		document.getElementById('add-reading')
+	);
 	let r1 = vsr_show.value;
 	let r2 = msr_show.value;
 	let r3 = lamda_show.value;
 
-	for(let i=0;i<tab_data.length;i++)
-	{
-		if(tab_data[i][2]==parseInt(r2))
-		{
-			alert("You cannot add the same value again");
+	for (let i = 0; i < tab_data.length; i++) {
+		if (tab_data[i][2] == parseInt(r2)) {
+			alert('You cannot add the same value again');
 			return;
 		}
 	}
 
-    if(num_of_readings < 5) {
+	if (num_of_readings < 5) {
 		tab_data.push([]);
-		tab_data[num_of_readings].push(num_of_readings+1);
+		tab_data[num_of_readings].push(num_of_readings + 1);
 		tab_data[num_of_readings].push(parseFloat(r1));
 		tab_data[num_of_readings].push(parseInt(r2));
 		tab_data[num_of_readings].push(parseFloat(r3));
@@ -526,49 +537,67 @@ function add_readings() {
 			'Number of Fringes',
 			'Calculate Wavelength (nm)',
 		];
-		let parent:HTMLDivElement = <HTMLDivElement>document.getElementById("pannel4");
+		let parent: HTMLDivElement = <HTMLDivElement>(
+			document.getElementById('pannel4')
+		);
 		parent.innerHTML = '';
-	
-		let tab = new Verify_Rows_Cols_Custom_Fixed(heading,tab_data,[num_of_readings],[[3]],'',parent,true,true,()=>{},5);
+
+		let tab = new Verify_Rows_Cols_Custom_Fixed(
+			heading,
+			tab_data,
+			[num_of_readings],
+			[[3]],
+			'',
+			parent,
+			true,
+			true,
+			() => {},
+			5
+		);
 		new_row = true;
 		num_of_readings++;
 		tab.load_table();
 		show_table_panel();
 		btn.disabled = true;
-        
-    } else {
-        alert("You have entered 5 readings, you can now move to calculations");
-    }
+	} else {
+		alert('You have entered 5 readings, you can now move to calculations');
+	}
 
-    if(num_of_readings == 5) {
-        pp.addtorightpannel(bt_to_activity4, 3);
-        //complete_reading_table();
-        //pp.showdescription('Rest of the table values will be auot filled', 3);
-        //show_side_panel();
-    }
-    
+	if (num_of_readings == 5) {
+		pp.addtorightpannel(bt_to_activity4, 3);
+		//complete_reading_table();
+		//pp.showdescription('Rest of the table values will be auot filled', 3);
+		//show_side_panel();
+	}
 }
 
-function enable_addvalue_btn()
-{
-	let btn:HTMLButtonElement = <HTMLButtonElement>document.getElementById("add-reading");
+function enable_addvalue_btn() {
+	let btn: HTMLButtonElement = <HTMLButtonElement>(
+		document.getElementById('add-reading')
+	);
 	btn.disabled = false;
 }
 
 function complete_reading_table() {
-    if(num_of_readings == 4) {
-       for(let i=0; i<4; i++) {
-           user_readings[i+4][1] = all_left_readings[i+4][0].toFixed(2);
-           user_readings[i+4][2] = all_left_readings[i+4][1].toFixed(2);
+	if (num_of_readings == 4) {
+		for (let i = 0; i < 4; i++) {
+			user_readings[i + 4][1] = all_left_readings[i + 4][0].toFixed(2);
+			user_readings[i + 4][2] = all_left_readings[i + 4][1].toFixed(2);
 
-           user_readings[i+4][3] = all_right_readings[i+4][0].toFixed(2);
-           user_readings[i+4][4] = all_right_readings[i+4][1].toFixed(2);
+			user_readings[i + 4][3] = all_right_readings[i + 4][0].toFixed(2);
+			user_readings[i + 4][4] = all_right_readings[i + 4][1].toFixed(2);
 
-           user_readings[i+4][5] = ((all_left_readings[i+4][0] - all_left_readings[i+4][3] + (all_left_readings[i+4][2] - all_left_readings[i+4][4])*0.02) / 10).toFixed(3);
-       }
-    }
+			user_readings[i + 4][5] = (
+				(all_left_readings[i + 4][0] -
+					all_left_readings[i + 4][3] +
+					(all_left_readings[i + 4][2] -
+						all_left_readings[i + 4][4]) *
+						0.02) /
+				10
+			).toFixed(3);
+		}
+	}
 }
-
 
 function delete_readings() {
 	if (num_of_readings >= 0) {
@@ -623,13 +652,13 @@ function show_side_panel() {
 }
 
 function move_to_act4() {
-    // user_data = [];
-    // user_data = data;
-    // for(let i=0; i<4; i++) {
-    //     user_data[i][1] = parseFloat(user_readings[i][5]);
-    //     user_data[i][3] = parseInt(user_readings[i][1]) -  parseInt(user_readings[i][3]);
-    //     user_data[i][4] = parseInt(user_readings[i][2]) -  parseInt(user_readings[i][4]);
-    // }
+	// user_data = [];
+	// user_data = data;
+	// for(let i=0; i<4; i++) {
+	//     user_data[i][1] = parseFloat(user_readings[i][5]);
+	//     user_data[i][3] = parseInt(user_readings[i][1]) -  parseInt(user_readings[i][3]);
+	//     user_data[i][4] = parseInt(user_readings[i][2]) -  parseInt(user_readings[i][4]);
+	// }
 
 	// fine_up_btn.removeEventListener('click', move_fine_up);
 	// fine_down_btn.removeEventListener('click', move_fine_down);
@@ -671,29 +700,4 @@ function fill_test_val() {
 	//activity3();
 }
 
-activity2();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// activity2();

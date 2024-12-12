@@ -1,0 +1,49 @@
+[
+
+    {
+        "question": "What causes the interference fringes to shift in the Michelson interferometer?",
+        "qid": 1,
+        "option_a": "Changing the color of the light",
+        "option_b": "Moving the beam splitter",
+        "option_c": "Altering the path length difference between the two beams",
+        "option_d": "Changing the laser intensity",
+        "correct_option": "c"
+    },
+    {
+        "question": "How is the wavelength of the He-Ne laser determined using the Michelson interferometer?",
+        "qid": 2,
+        "option_a": "By measuring the speed of the light source",
+        "option_b": "By counting the number of fringes that move as the mirror is displaced",
+        "option_c": "By changing the refractive index of air",
+        "option_d": "By adjusting the beam splitter",
+        "correct_option": "b"
+    },
+    {
+        "question": "What must be done to measure the refractive index of air using the interferometer?",
+        "qid": 3,
+        "option_a": "Change the type of laser used",
+        "option_b": "Introduce a pressure change and observe the fringe shift",
+        "option_c": "Move the beam splitter",
+        "option_d": "Turn off the laser",
+        "correct_option": "b"
+    },
+    {
+    
+        "question": "Why does the introduction of a vacuum chamber affect the fringe pattern?",
+        "qid": 4,
+        "option_a": "It alters the wavelength of the laser",
+        "option_b": "It changes the refractive index of the medium the light travels through",
+        "option_c": "It blocks one of the mirrors",
+        "option_d": "It increases the coherence length of the light",
+        "correct_option": "b"
+    },
+    {
+        "question": "What is the main advantage of using a Michelson interferometer for wavelength measurement?",
+        "qid": 5,
+        "option_a": "It is highly complex and expensive",
+        "option_b": "It allows precise measurements of very small distances",
+        "option_c": "It measures sound waves accurately",
+        "option_d": "It can only be used for visible light",
+        "correct_option": "b"
+    }
+]

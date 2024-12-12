@@ -14,12 +14,16 @@ let circular_glass = new Image();
 circular_glass.src = `./images/components/Circular_glass_plate.webp`;
 let convex_lens = new Image();
 convex_lens.src = `./images/components/Convex_lens.webp`;
+let plano_convex_lens = new Image();
+plano_convex_lens.src = `./images/components/Plano-convex lens.webp`;
 let light = new Image();
 light.src = `./images/components/Monochromatic_Source02.webp`;
 let plano_convex = new Image();
 plano_convex.src = `./images/components/pc_1.webp`;
 let microscope = new Image();
 microscope.src = `./images/components/Travelling_microscope.webp`;
+let travelling_microscope = new Image();
+travelling_microscope.src = `./images/components/Travelling_microscope01.webp`;
 // interferometer simulation images
 let micrometer_setup = new Image();
 micrometer_setup.src = './images/simulation/micrometer_setup.png';

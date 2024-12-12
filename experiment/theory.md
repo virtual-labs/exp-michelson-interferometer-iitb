@@ -20,11 +20,12 @@
 <p>
     Formula <br>
     &lambda; = 2 * d/m
-    $$ Refrective\\ Index = 1 + \\frac{m*\\lambda*p}{2*L*\\Delta p} $$
+    
+    $$ \text{Refrective Index} = 1 + \frac{m*\lambda*p}{2*L*\Delta p} $$
 </p>
 
 <ul>
     <li>Cell length L = 7.056 cm</li>
     <li>Laser wavelength &lambda; = 632.8 nm</li>
     <li>Atmospheric pressure p = 760 torr</li>
-</ul>
+</ul><script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
