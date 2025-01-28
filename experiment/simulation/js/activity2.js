@@ -65,9 +65,8 @@ function activity2() {
         ['5', ' ', ' ', ' ', ' ', ' '],
         ['6', ' ', ' ', ' ', ' ', ' '],
         ['7', ' ', ' ', ' ', ' ', ' '],
-        ['8', ' ', ' ', ' ', ' ', ' ']
+        ['8', ' ', ' ', ' ', ' ', ' '],
     ];
-    ;
     pp.showtitle(`<p id="exp-title" style='width: 25vw;'>Note Readings in table</span><p>`, 3);
     pp.showdescription(`<div style="background-color: #f4ccccff; border-radius: 10px; border: black; padding: 5%; font-weight: 500; font-size: calc(0.5vw + 12px);">
     <p>Use the up and down arrows shown on the simulator to turn the screw guage.</p>
@@ -99,7 +98,9 @@ function activity2() {
     window.onload = a2_windowresize;
     window.onresize = a2_windowresize;
     setTimeout(draw_all_canvas, 500);
-    setTimeout(() => { MathJax.typeset(); }, 200);
+    setTimeout(() => {
+        MathJax.typeset();
+    }, 200);
     a2_windowresize();
 }
 function draw_all_canvas() {
@@ -121,12 +122,12 @@ function draw_all_canvas() {
     // let up_btn: HTMLButtonElement = <HTMLButtonElement>(
     // 	document.getElementById('a2-btn-up')
     // );
-    fine_up_btn = (document.getElementById('a2-btn-fine-up'));
+    fine_up_btn = document.getElementById('a2-btn-fine-up');
     // let down_btn: HTMLButtonElement = <HTMLButtonElement>(
     // 	document.getElementById('a2-btn-down')
     // );
     fine_down_btn = (document.getElementById('a2-btn-fine-down'));
-    reset = (document.getElementById('re-center'));
+    reset = document.getElementById('re-center');
     // right_btn.addEventListener('click', move_right);
     // left_btn.addEventListener('click', move_left);
     // fine_right_btn.addEventListener('click', move_fine_right);
@@ -205,7 +206,7 @@ function load_canvas2_images() {
     }
     console.log(my_canvas2.width, my_canvas2.height);
     inter_rings = new Chemistry.Inter_Rings(8, d, selected_ring_color, new Chemistry.Point(my_canvas2.width / (2 * lscale) + 5, my_canvas2.height / (2 * lscale)), my_canvas2);
-    inter_rings.color = "red";
+    inter_rings.color = 'red';
     let mscope_img = new Chemistry.Custome_image(mscope, new Chemistry.Point(my_canvas2.width / (2 * lscale), my_canvas2.height / (2 * lscale)), 860, 860, my_canvas2);
     let x_line = new Chemistry.Line(100, my_canvas2.height / (2 * lscale), 700, my_canvas2.height / (2 * lscale), my_canvas2);
     let y_line = new Chemistry.Line(my_canvas2.width / (2 * lscale) + 5, 100, my_canvas2.width / (2 * lscale) + 5, 700, my_canvas2);
@@ -291,20 +292,24 @@ function show_micro_scale_reading() {
 }
 function show_main_scale_reading() {
     if (inter_rings.center_x <= inter_rings.stpt.x) {
-        msr = (inter_rings.stpt.x - inter_rings.center_x) / (inter_rings.multiplier / 2);
+        msr =
+            (inter_rings.stpt.x - inter_rings.center_x) /
+                (inter_rings.multiplier / 2);
         msr = msr / 2;
         let msr_val = Math.floor(parseFloat((msr / 2).toFixed(3)) / 0.05);
-        let vsr_val = Math.floor((parseFloat((msr / 2).toFixed(3)) - (msr_val * 0.05)) * 1000);
+        let vsr_val = Math.floor((parseFloat((msr / 2).toFixed(3)) - msr_val * 0.05) * 1000);
         let lamda_val = current_lambda;
         msr_show.value = msr_val.toString();
         vsr_show.value = vsr_val.toString();
         lamda_show.value = lamda_val.toString();
     }
     else if (inter_rings.center_x > inter_rings.stpt.x) {
-        msr = (inter_rings.center_x - inter_rings.stpt.x) / (inter_rings.multiplier / 2);
+        msr =
+            (inter_rings.center_x - inter_rings.stpt.x) /
+                (inter_rings.multiplier / 2);
         msr = msr / 2;
         let msr_val = Math.floor(parseFloat((msr / 2).toFixed(3)) / 0.05);
-        let vsr_val = Math.floor((parseFloat((msr / 2).toFixed(3)) - (msr_val * 0.05)) * 1000);
+        let vsr_val = Math.floor((parseFloat((msr / 2).toFixed(3)) - msr_val * 0.05) * 1000);
         msr_show.value = msr_val.toString();
         vsr_show.value = vsr_val.toString();
     }
@@ -316,11 +321,13 @@ function load_table_input() {
         'Number of Fringes',
         'Calculate Wavelength (nm)',
     ];
-    let parent = document.getElementById("pannel4");
-    let offcanvasbody = document.getElementById("offcanvasRight4");
+    let parent = (document.getElementById('pannel4'));
+    let offcanvasbody = (document.getElementById('offcanvasRight4'));
     offcanvasbody.style.width = '50vw';
     tab_data = [[null, null, null]];
-    let tab = new Verify_Rows_Cols_Custom_Fixed(heading, tab_data, [], [], '', parent, true, true, () => { alert("Success"); }, 5);
+    let tab = new Verify_Rows_Cols_Custom_Fixed(heading, tab_data, [], [], '', parent, true, true, () => {
+        alert('Success');
+    }, 5);
     tab.load_table();
     tab_data = [];
 }
@@ -341,13 +348,13 @@ function load_reading_table() {
     tab.draw();
 }
 function add_readings() {
-    let btn = document.getElementById("add-reading");
+    let btn = (document.getElementById('add-reading'));
     let r1 = vsr_show.value;
     let r2 = msr_show.value;
     let r3 = lamda_show.value;
     for (let i = 0; i < tab_data.length; i++) {
         if (tab_data[i][2] == parseInt(r2)) {
-            alert("You cannot add the same value again");
+            alert('You cannot add the same value again');
             return;
         }
     }
@@ -363,7 +370,7 @@ function add_readings() {
             'Number of Fringes',
             'Calculate Wavelength (nm)',
         ];
-        let parent = document.getElementById("pannel4");
+        let parent = (document.getElementById('pannel4'));
         parent.innerHTML = '';
         let tab = new Verify_Rows_Cols_Custom_Fixed(heading, tab_data, [num_of_readings], [[3]], '', parent, true, true, () => { }, 5);
         new_row = true;
@@ -373,7 +380,7 @@ function add_readings() {
         btn.disabled = true;
     }
     else {
-        alert("You have entered 5 readings, you can now move to calculations");
+        alert('You have entered 5 readings, you can now move to calculations');
     }
     if (num_of_readings == 5) {
         pp.addtorightpannel(bt_to_activity4, 3);
@@ -383,7 +390,7 @@ function add_readings() {
     }
 }
 function enable_addvalue_btn() {
-    let btn = document.getElementById("add-reading");
+    let btn = (document.getElementById('add-reading'));
     btn.disabled = false;
 }
 function complete_reading_table() {
@@ -393,7 +400,12 @@ function complete_reading_table() {
             user_readings[i + 4][2] = all_left_readings[i + 4][1].toFixed(2);
             user_readings[i + 4][3] = all_right_readings[i + 4][0].toFixed(2);
             user_readings[i + 4][4] = all_right_readings[i + 4][1].toFixed(2);
-            user_readings[i + 4][5] = ((all_left_readings[i + 4][0] - all_left_readings[i + 4][3] + (all_left_readings[i + 4][2] - all_left_readings[i + 4][4]) * 0.02) / 10).toFixed(3);
+            user_readings[i + 4][5] = ((all_left_readings[i + 4][0] -
+                all_left_readings[i + 4][3] +
+                (all_left_readings[i + 4][2] -
+                    all_left_readings[i + 4][4]) *
+                    0.02) /
+                10).toFixed(3);
         }
     }
 }
@@ -487,5 +499,5 @@ function fill_test_val() {
     reset.removeEventListener('click', re_center);
     //activity3();
 }
-activity2();
+// activity2();
 //# sourceMappingURL=activity2.js.map

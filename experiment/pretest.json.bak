@@ -1,0 +1,49 @@
+[
+    {
+        "question": "What is the primary function of a Michelson interferometer?",
+        "qid": 1,
+        "option_a": "To amplify light intensity",
+        "option_b": "To split and recombine light beams to produce interference patterns",
+        "option_c": "To measure sound waves",
+        "option_d": "To filter laser beams",
+        "correct_option": "b"
+    },
+    {
+        "question": "What property of light does a Michelson interferometer measure?",
+        "qid": 2,
+        "option_a": "Wavelength and refractive index",
+        "option_b": "Amplitude only",
+        "option_c": "Speed of sound",
+        "option_d": "Polarization",
+        "correct_option": "a"
+    },
+    {
+        "question": "What is the role of the beam splitter in the Michelson interferometer?",
+        "qid": 3,
+        "option_a": "To focus the light beam",
+        "option_b": "To split the incoming light into two paths",
+        "option_c": "To absorb excess light",
+        "option_d": "To change the color of the light",
+        "correct_option": "b"
+    },
+    {
+        
+        "question": "Why is a He-Ne laser commonly used in interferometry?",
+        "qid": 4,
+        "option_a": "It emits sound waves",
+        "option_b": "It provides a coherent and stable light source",
+        "option_c": "It is less expensive than other lasers",
+        "option_d": "It has a variable wavelength",
+        "correct_option": "b"
+    },
+
+    {
+        "question": "What happens when the movable mirror in a Michelson interferometer is adjusted?",
+        "qid": 5,
+        "option_a": "The light becomes dimmer",
+        "option_b": "The interference fringes shift",
+        "option_c": "The laser turns off",
+        "option_d": "The beam splitter rotates",
+        "correct_option": "b"
+    }
+]

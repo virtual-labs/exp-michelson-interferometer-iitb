@@ -1,5 +1,5 @@
 <h3>Equipment required:</h3>
-<ul>
+<ol type='1'>
     <li>He-Ne laser source</li>
     <li>Michelson interferometer apparatus</li>
     <li>Beam splitter</li>
@@ -7,7 +7,11 @@
     <li>Vacuum chamber (for refractive index measurement)</li>
     <li>Pressure gauge</li>
     <li>Ruler or micrometer for distance measurement</li>
-</ul>
+</ol>
+
+<br>
+
+<h3>Theory</h3>
 
 <p>
     The Michelson interferometer is an optical device that splits a beam of light into two paths, reflects them back, and recombines them to create an interference pattern. By analyzing these patterns, precise measurements of the wavelength of light and the refractive index of air can be made. The interference fringes shift when the optical path difference between the two beams changes, allowing for the measurement of minute distances and wavelength calculations.
@@ -20,11 +24,12 @@
 <p>
     Formula <br>
     &lambda; = 2 * d/m
-    $$ Refrective\\ Index = 1 + \\frac{m*\\lambda*p}{2*L*\\Delta p} $$
+    
+    $$ \text{Refrective Index} = 1 + \frac{m*\lambda*p}{2*L*\Delta p} $$
 </p>
 
 <ul>
     <li>Cell length L = 7.056 cm</li>
     <li>Laser wavelength &lambda; = 632.8 nm</li>
     <li>Atmospheric pressure p = 760 torr</li>
-</ul>
+</ul><script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
