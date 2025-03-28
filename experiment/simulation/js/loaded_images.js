@@ -29,4 +29,11 @@ let micrometer_setup = new Image();
 micrometer_setup.src = './images/simulation/micrometer_setup.png';
 let pressure_setup = new Image();
 pressure_setup.src = './images/simulation/pressure_setup.png';
+// interferometer individual images
+let mirror = new Image();
+mirror.src = './images/simulation/horizontal_mirror.png';
+let laser = new Image();
+laser.src = './images/simulation/laser.png';
+let scale = new Image();
+scale.src = './images/simulation/mainscale.png';
 //# sourceMappingURL=loaded_images.js.map

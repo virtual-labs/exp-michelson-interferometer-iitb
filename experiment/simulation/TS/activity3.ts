@@ -34,6 +34,20 @@ let act3_all_btns = `
 `;
 
 let act3_readings = `
+	<div style="position: absolute; left: 50vw; border: 1px solid black; width: 43vw; height: inherit;">
+		<div style="position: relative; width: 100%; height: inherit;">
+			<span style="position: absolute; top: 4vw; left: 11vw;"  >Fringes</span>
+			<span style="position: absolute; top: 23vw; left: 13vw;" >Immovable Mirror</span>
+			<span style="position: absolute; top: 6vw; left: 22vw;">Movable Mirror</span>
+			<span style="position: absolute; top: 13vw; left: 9vw;" >Beam Splitter</span>
+			<span style="position: absolute; top: 26.7vw; left: 18vw;" >Presure Controller &nbsp; &nbsp; Presure Gauge</span>
+			<span id='f-dsp' style="position: absolute; top: 0.5vw; left: 28vw; z-index: 4;">0</span>
+			<span id='p-dsp' style="position: absolute; top: 23.1vw; left: 29vw; z-index: 4;">0</span>
+		</div>
+	</div>
+
+
+
     <div id='act3-readings' style="position: absolute; top:30vw; left: 80vw; width: 12vw;">
 		<p style='margin: 0; font-size: 1.0vw'>Number of Fringes</p>
 		<div><input  style='width: 10vw; height: 2vw; font-size: 1.2vw;' id='frg-inp' class='form-control' disabled value='00' /><div>
@@ -118,6 +132,9 @@ function activity3() {
 	setTimeout(act3_draw_all_canvas, 500);
     setTimeout(() => {MathJax.typeset();}, 200);
     a3_windowresize();
+
+	let ele: HTMLButtonElement = <HTMLButtonElement> document.getElementsByClassName('offcanvasbtn')[1];
+	ele.style.top = '5vw';
 }
 
 function act3_draw_all_canvas() {
@@ -306,6 +323,9 @@ function show_pres_scale_reading()
 {
 	act3_app_pres_show.value = act3_current_pressure_reading.toString();
 	frg_show.value = act3_current_num_of_rings.toString();
+
+	document.getElementById('f-dsp').innerHTML = current_num_of_rings.toString();
+	document.getElementById('p-dsp').innerHTML = current_micrometer_reading.toString();
 }
 
 function act3_load_table_input()
@@ -485,4 +505,4 @@ function experiment_complete()
 {
 	alert("Experiment is completed");
 }
-//activity3();
+// activity3();
