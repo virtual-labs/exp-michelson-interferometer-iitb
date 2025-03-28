@@ -41,6 +41,20 @@ let all_btns = `
 `;
 
 let readings = `
+
+	<div style="position: absolute; left: 50vw; border: 1px solid black; width: 43vw; height: inherit;">
+	<div style="position: relative; width: 100%; height: inherit;">
+	<span style="position: absolute; top: 4.5vw; left: 11vw;"  >Fringes</span>
+	<span style="position: absolute; top: 15vw; left: 31vw;" >Screw Gauge</span>
+	<span style="position: absolute; top: 25.5vw; left: 13vw;" >Immovable Mirror</span>
+	<span style="position: absolute; top: 7.2vw; left: 22vw;">Movable Mirror</span>
+	<span style="position: absolute; top: 14vw; left: 9vw;" >Beam Splitter</span>
+	<span id='f-dsp' style="position: absolute; top: 0.9vw; left: 28vw; z-index: 4;"></span>
+	<span id='s-dsp' style="position: absolute; top: 12.5vw; left: 27vw; z-index: 4;"></span>
+	</div>
+	</div>
+
+
     <div id='act2-readings' style="position: absolute; top:30vw; left: 80vw; width: 12vw;">
     <p style='margin: 0; font-size: 1.0vw'>Number of Fringes</p>
     <div><input style='width: 10vw; height: 2vw; font-size: 1.2vw;' id='msr-inp' class='form-control' disabled value='00' /><div>
@@ -89,8 +103,10 @@ function activity2() {
      </div>`,
 		3
 	);
+	
+	//let formula = `<br> <div><span> 2 \\times d = m \\times \\lambda </span></div><br>`;
 
-	pp.showtitle(`Observation Table`, 4);
+	pp.showtitle(`Observation Table <br><br> <div><span>$$ 2 \\times d = m \\times \\lambda $$</span></div><br> `, 4);
 
 	// load reading talble in right panel
 
@@ -132,6 +148,9 @@ function activity2() {
 	}, 200);
 
 	a2_windowresize();
+
+	let ele: HTMLButtonElement = <HTMLButtonElement> document.getElementsByClassName('offcanvasbtn')[1];
+	ele.style.top = '5vw';
 }
 
 function draw_all_canvas() {
@@ -411,6 +430,10 @@ function show_micro_scale_reading() {
 	vsr_show.value = current_micrometer_reading.toString();
 	msr_show.value = current_num_of_rings.toString();
 	lamda_show.value = current_lambda.toString();
+
+	document.getElementById('f-dsp').innerHTML = current_num_of_rings.toString();
+	document.getElementById('s-dsp').innerHTML = current_micrometer_reading.toString();
+
 }
 
 function show_main_scale_reading() {
@@ -501,6 +524,8 @@ function load_reading_table() {
 	let rows = user_readings;
 
 	tab = new Table(heading, rows);
+
+	
 
 	table = tab.template;
 
