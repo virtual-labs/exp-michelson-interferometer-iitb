@@ -42,7 +42,7 @@ let all_btns = `
 
 let readings = `
 
-	<div style="position: absolute; left: 50vw; border: 1px solid black; width: 43vw; height: inherit;">
+	<div style="position: absolute; left: 50vw; width: 43vw; height: inherit;">
 	<div style="position: relative; width: 100%; height: inherit;">
 	<span style="position: absolute; top: 4.5vw; left: 11vw;"  >Fringes</span>
 	<span style="position: absolute; top: 15vw; left: 31vw;" >Screw Gauge</span>
@@ -540,7 +540,7 @@ function add_readings() {
 	);
 	let r1 = vsr_show.value;
 	let r2 = msr_show.value;
-	let r3 = lamda_show.value;
+	let r3 = (parseFloat(lamda_show.value)*1000).toString();
 
 	for (let i = 0; i < tab_data.length; i++) {
 		if (tab_data[i][2] == parseInt(r2)) {

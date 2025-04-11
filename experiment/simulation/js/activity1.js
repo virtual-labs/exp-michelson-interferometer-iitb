@@ -101,7 +101,8 @@ function a1_canvas_mapping() {
 }
 function a1_draw_all_components() {
     var sq = new Chemistry.Custome_image(mirror, new Chemistry.Point(900, 450), 305, 90, canvas);
-    sq.name = 'Mirror';
+    sq.name = 'Beam-Splitter';
+    sq.stang = 135;
     scene.add(sq);
     var sq = new Chemistry.Custome_image(laser, new Chemistry.Point(1600, 300), 500, 70, canvas);
     sq.name = 'Laser';
@@ -116,8 +117,8 @@ function a1_load_questions() { }
     question = [];
     question.push({
         srno: 1,
-        question: "Select <span style='color: #018fc3'>Mirror</span>",
-        ans: 'Mirror',
+        question: "Select <span style='color: #018fc3'>Beam-Splitter</span>",
+        ans: 'Beam-Splitter',
         hint: [
             'Rectangular in shape',
             'Reflection on surface',
@@ -171,7 +172,7 @@ function load_higlighted_images() {
         [scale, scale],
     ];
     a1_labels = [
-        new Chemistry.Geo_Text('Mirror', new Chemistry.Point(800, 230), canvas),
+        new Chemistry.Geo_Text('Beam-Splitter', new Chemistry.Point(800, 230), canvas),
         new Chemistry.Geo_Text('Laser', new Chemistry.Point(1500, 230), canvas),
         new Chemistry.Geo_Text('Scale', new Chemistry.Point(200, 350), canvas),
     ];

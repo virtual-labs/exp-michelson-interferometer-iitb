@@ -143,7 +143,8 @@ function a1_draw_all_components() {
 		90,
 		canvas
 	);
-	sq.name = 'Mirror';
+	sq.name = 'Beam-Splitter';
+	sq.stang = 135;
 	scene.add(sq);
 
 	var sq = new Chemistry.Custome_image(
@@ -176,8 +177,8 @@ function a1_load_questions() {}
 	question.push({
 		srno: 1,
 		question:
-			"Select <span style='color: #018fc3'>Mirror</span>",
-		ans: 'Mirror',
+			"Select <span style='color: #018fc3'>Beam-Splitter</span>",
+		ans: 'Beam-Splitter',
 		hint: [
 			'Rectangular in shape',
 			'Reflection on surface',
@@ -253,7 +254,7 @@ function load_higlighted_images() {
 
 	a1_labels = [
 		new Chemistry.Geo_Text(
-			'Mirror',
+			'Beam-Splitter',
 			new Chemistry.Point(800, 230),
 			canvas
 		),
